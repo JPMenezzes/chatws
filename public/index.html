@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat WS</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background-color: #128C7E;
+      color: #fff;
+      margin: 0;
+    }
+    #chat-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #messages {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+    #form {
+      display: flex;
+      margin-top: 10px;
+    }
+    #msg {
+      flex-grow: 2;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #submit-button {
+      padding: 5px 10px;
+      background-color: #128C7E;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <h1>Chat WS</h1>
+    <form id="form" onsubmit="return false">
+      Esreva sua Mensagem
+      <input type="text" id="msg">
+      <button type="submit">Enviar</button>
+    </form>
+
+    <ul id="mensagens">
+    </ul>
+
+    <div id="status"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
