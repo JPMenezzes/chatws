@@ -5,7 +5,8 @@ const http = require("http").createServer(app);
 serverSocket = require('socket.io')(http);
 app.use(express.static('public'));
 
-const PORT = 8080
+const PORT = process.env['PORT'] || 8080
+
 http.listen(PORT, () => console.log('Server Initialized, door:' + PORT));
 
 /*app.get("/teste", (req, res) => res.sendFile(__dirname + '/public/teste.html'));*/
